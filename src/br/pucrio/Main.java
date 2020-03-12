@@ -3,11 +3,9 @@ package br.pucrio;
 import br.pucrio.agents.TrainingAgent;
 import br.pucrio.agents.data.ClusterAgent;
 import br.pucrio.agents.data.MetadataAgent;
-import br.pucrio.agents.model.FeatureAgent;
+import br.pucrio.agents.model.FeatureImportanceAgent;
 import br.pucrio.agents.model.PredictionMetricAgent;
-import br.pucrio.agents.model.TrainingMetricAgent;
 import br.pucrio.agents.model.WeightAgent;
-import jade.Boot3;
 import jade.core.*;
 import jade.core.Runtime;
 import jade.wrapper.AgentContainer;
@@ -31,8 +29,7 @@ public class Main {
     private static List<Class<? extends Agent>> getModelAgents(String platform) {
         List<Class<? extends Agent>> classes = new ArrayList();
         if (platform.equals("Training")){
-            classes.add(FeatureAgent.class);
-            classes.add(TrainingMetricAgent.class);
+            classes.add(FeatureImportanceAgent.class);
             classes.add(WeightAgent.class);
         } else if (platform.equals("Prediction")){
             classes.add(PredictionMetricAgent.class);
@@ -46,7 +43,7 @@ public class Main {
         List<Class<? extends Agent>> classes = getDataAgents(platform);
         classes.addAll(getModelAgents(platform));
 
-        if (platform.equals("Main")) {
+        if (platform.equals("Controller")) {
             classes.add(TrainingAgent.class);
         }
         ProfileImpl pContainer = new ProfileImpl(null, 1200, null);
@@ -68,9 +65,9 @@ public class Main {
         platforms.add("Ingestion");
         platforms.add("Training");
         platforms.add("Prediction");
-        platforms.add("Main");
+        platforms.add("Controller");
 
-        Profile profile = new ProfileImpl(null, 1200, "Company");
+        Profile profile = new ProfileImpl(null, 1200, "Cluster");
         AgentContainer mainContainer = rt.createMainContainer(profile);
 
         for (String platform : platforms) {
