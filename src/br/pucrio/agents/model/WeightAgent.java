@@ -24,14 +24,15 @@
  */
 package br.pucrio.agents.model;
 
-import jade.core.Agent;
+import br.pucrio.agents.BaseAgent;
+import br.pucrio.agents.TrainingAgent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 
 import java.util.Random;
 
 
-public class WeightAgent extends Agent {
+public class WeightAgent extends BaseAgent {
 
     protected void setup() {
         System.out.println("Hello World! My name is "+getLocalName());
@@ -43,7 +44,7 @@ public class WeightAgent extends Agent {
                     Random willChangeWeights = new Random(10);
                     if (willChangeWeights.nextBoolean()) {
                         System.out.println("Weights Changed by msg: "+msg.getContent());
-                        // send to training
+                        sendMessage("Weights updated", TrainingAgent.class);
                     }
                 }
             }

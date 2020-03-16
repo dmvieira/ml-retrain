@@ -24,14 +24,13 @@
  */
 package br.pucrio.agents;
 
-import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 
 import java.util.Random;
 
 
-public class TrainingAgent extends Agent {
+public class TrainingAgent extends BaseAgent {
 
     protected void setup() {
         System.out.println("Hello World! My name is "+getLocalName());

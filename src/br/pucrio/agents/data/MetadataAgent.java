@@ -24,13 +24,15 @@
  */
 package br.pucrio.agents.data;
 
-import jade.core.Agent;
+import br.pucrio.agents.BaseAgent;
+import br.pucrio.agents.TrainingAgent;
+import br.pucrio.agents.model.WeightAgent;
 import jade.core.behaviours.CyclicBehaviour;
 
 import java.util.Random;
 
 
-public class MetadataAgent extends Agent {
+public class MetadataAgent extends BaseAgent {
 
     protected void setup() {
         System.out.println("Hello World! My name is "+getLocalName());
@@ -41,8 +43,8 @@ public class MetadataAgent extends Agent {
                 Random metadataChanged = new Random(10);
                 if (metadataChanged.nextBoolean()){
                     System.out.println("Metadata of data Changed!");
-                    // send to training
-                    // send to weight
+                    sendMessage("Metadata changed", TrainingAgent.class);
+                    sendMessage("Metadata changed", WeightAgent.class);
                 }
             }
         });

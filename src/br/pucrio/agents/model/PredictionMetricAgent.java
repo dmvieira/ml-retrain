@@ -24,13 +24,14 @@
  */
 package br.pucrio.agents.model;
 
-import jade.core.Agent;
+import br.pucrio.agents.BaseAgent;
+import br.pucrio.agents.TrainingAgent;
 import jade.core.behaviours.CyclicBehaviour;
 
 import java.util.Random;
 
 
-public class PredictionMetricAgent extends Agent {
+public class PredictionMetricAgent extends BaseAgent {
 
     protected void setup() {
         System.out.println("Hello World! My name is "+getLocalName());
@@ -40,8 +41,8 @@ public class PredictionMetricAgent extends Agent {
                 Random predictionMetricChanged = new Random(10);
                 if (predictionMetricChanged.nextBoolean()){
                     System.out.println("Prediction Metrics Changed!");
-                    // send to training
-                    // send to weight
+                    sendMessage("Prediction Metrics Changed", TrainingAgent.class);
+                    sendMessage("Prediction Metrics Changed", WeightAgent.class);
                 }
             }
         });

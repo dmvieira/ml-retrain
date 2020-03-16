@@ -24,12 +24,12 @@
  */
 package br.pucrio.agents.model;
 
-import jade.core.Agent;
+import br.pucrio.agents.BaseAgent;
 import jade.core.behaviours.CyclicBehaviour;
 
 import java.util.Random;
 
-public class FeatureImportanceAgent extends Agent {
+public class FeatureImportanceAgent extends BaseAgent {
 
     protected void setup() {
         System.out.println("Hello World! My name is "+getLocalName());
@@ -39,7 +39,7 @@ public class FeatureImportanceAgent extends Agent {
                 Random featureImportanceChanged = new Random(10);
                 if (featureImportanceChanged.nextBoolean()){
                     System.out.println("Feature Importance of Training Changed!");
-                    // send to weight
+                    sendMessage("Feature Importance Changed", WeightAgent.class);
                 }
             }
         });

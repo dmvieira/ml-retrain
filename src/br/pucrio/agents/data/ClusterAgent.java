@@ -24,12 +24,14 @@
  */
 package br.pucrio.agents.data;
 
-import jade.core.Agent;
+import br.pucrio.agents.BaseAgent;
+import br.pucrio.agents.TrainingAgent;
+import br.pucrio.agents.model.WeightAgent;
 import jade.core.behaviours.CyclicBehaviour;
 
 import java.util.Random;
 
-public class ClusterAgent extends Agent {
+public class ClusterAgent extends BaseAgent {
 
     protected void setup() {
         System.out.println("Hello World! My name is "+getLocalName());
@@ -40,8 +42,8 @@ public class ClusterAgent extends Agent {
                 Random clusterChanged = new Random(10);
                 if (clusterChanged.nextBoolean()){
                     System.out.println("Clusters of data Changed!");
-                    // send to training
-                    // send to weight
+                    sendMessage("Clusters changed", TrainingAgent.class);
+                    sendMessage("Clusters changed", WeightAgent.class);
 
                 }
             }
