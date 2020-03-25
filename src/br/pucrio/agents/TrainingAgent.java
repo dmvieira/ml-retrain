@@ -25,6 +25,7 @@
 package br.pucrio.agents;
 
 import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.OneShotBehaviour;
 import jade.lang.acl.ACLMessage;
 
 import java.util.Random;
@@ -34,6 +35,12 @@ public class TrainingAgent extends BaseAgent {
 
     protected void setup() {
         System.out.println("Hello World! My name is "+getLocalName());
+        addBehaviour(new OneShotBehaviour() {
+            @Override
+            public void action() {
+
+            }
+        });
         addBehaviour(new CyclicBehaviour() {
             @Override
             public void action() {
@@ -42,7 +49,7 @@ public class TrainingAgent extends BaseAgent {
                     Random willRetrain = new Random(10);
                     if (willRetrain.nextBoolean()) {
                         System.out.println("Retrained by msg: "+msg.getContent());
-                        // send to weight
+                        // send to weight new AID(agent.getSimpleName(), AID.ISLOCALNAME)
                     }
                 }
             }

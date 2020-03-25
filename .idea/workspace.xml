@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c387a7dd-7892-49ca-a0ed-92c9364e9621" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/br/pucrio/Actuator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/BaseCollectorAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/Collector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/BaseAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/BaseAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/TrainingAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/TrainingAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/data/ClusterAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/data/ClusterAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/data/MetadataAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/data/MetadataAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/model/FeatureImportanceAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/model/FeatureImportanceAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/model/PredictionMetricAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/model/PredictionMetricAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/model/WeightAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/model/WeightAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/data/ClusterAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/ClusterAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/data/MetadataAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/MetadataAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/model/FeatureImportanceAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/CorrelationAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/model/PredictionMetricAgent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/model/WeightAgent.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +49,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.pucrio" />
+      <recent name="br.pucrio.agents.collectors" />
+      <recent name="br.pucrio.agents.data" />
       <recent name="br.pucrio.agents" />
       <recent name="br.pucrio.agents.model" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="br.pucrio.Main" />
+      <option name="MAIN_CLASS_NAME" value="br.pucrio.Collector" />
       <module name="ml-retrain" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />

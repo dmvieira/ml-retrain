@@ -22,30 +22,22 @@
  * Boston, MA  02111-1307, USA.
  * **************************************************************
  */
-package br.pucrio.agents.model;
+package br.pucrio.agents.collectors.injestion;
 
-import br.pucrio.agents.BaseAgent;
 import br.pucrio.agents.TrainingAgent;
+import br.pucrio.agents.collectors.BaseCollectorAgent;
 import jade.core.behaviours.CyclicBehaviour;
 
 import java.util.Random;
 
+public class ClusterAgent extends BaseCollectorAgent {
 
-public class PredictionMetricAgent extends BaseAgent {
-
-    protected void setup() {
-        System.out.println("Hello World! My name is "+getLocalName());
-        addBehaviour(new CyclicBehaviour() {
-            @Override
-            public void action() {
-                Random predictionMetricChanged = new Random(10);
-                if (predictionMetricChanged.nextBoolean()){
-                    System.out.println("Prediction Metrics Changed!");
-                    sendMessage("Prediction Metrics Changed", TrainingAgent.class);
-                    sendMessage("Prediction Metrics Changed", WeightAgent.class);
-                }
-            }
-        });
+    protected void setup(){
+        super.setup();
+        Random rchanged = new Random(10);
+        if (rchanged.nextBoolean()){
+            setChanged();
+        }
     }
 }
 
