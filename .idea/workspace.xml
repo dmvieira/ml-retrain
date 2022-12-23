@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c387a7dd-7892-49ca-a0ed-92c9364e9621" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/br/pucrio/Actuator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/BaseCollectorAgent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/pucrio/RMA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/Collector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/BaseAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/BaseAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/TrainingAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/TrainingAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/data/ClusterAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/ClusterAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/data/MetadataAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/MetadataAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/model/FeatureImportanceAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/CorrelationAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/model/PredictionMetricAgent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/model/WeightAgent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/Actuator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/Actuator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/Collector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/Collector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/TrainingAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/RulerAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/BaseCollectorAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/BaseCollectorAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/ClusterAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/ClusterAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/CorrelationAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/CorrelationAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/MetadataAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/pucrio/agents/collectors/injestion/MetadataAgent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +54,20 @@
       <recent name="br.pucrio.agents.model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.RMA">
+    <configuration name="Actuator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.pucrio.Actuator" />
+      <module name="ml-retrain" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.pucrio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="br.pucrio.Collector" />
       <module name="ml-retrain" />
@@ -67,8 +78,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RMA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.pucrio.RMA" />
+      <module name="ml-retrain" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.pucrio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RMA" />
+        <item itemvalue="Application.Actuator" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -99,22 +125,26 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="378" y="124" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1280.720@0.0.1280.720" timestamp="1583882915840" />
-    <state width="1218" height="166" key="GridCell.Tab.0.bottom" timestamp="1584320199849">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1585689469919">
+      <screen x="0" y="0" width="1920" height="1800" />
     </state>
     <state width="1218" height="166" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1584320199849" />
-    <state width="1218" height="166" key="GridCell.Tab.0.center" timestamp="1584320199847">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom/0.0.1920.1800@0.0.1920.1800" timestamp="1585689469919" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1585689469917">
+      <screen x="0" y="0" width="1920" height="1800" />
     </state>
     <state width="1218" height="166" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1584320199847" />
-    <state width="1218" height="166" key="GridCell.Tab.0.left" timestamp="1584320199846">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center/0.0.1920.1800@0.0.1920.1800" timestamp="1585689469917" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1585689469914">
+      <screen x="0" y="0" width="1920" height="1800" />
     </state>
     <state width="1218" height="166" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1584320199846" />
-    <state width="1218" height="166" key="GridCell.Tab.0.right" timestamp="1584320199848">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left/0.0.1920.1800@0.0.1920.1800" timestamp="1585689469914" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1585689469918">
+      <screen x="0" y="0" width="1920" height="1800" />
     </state>
     <state width="1218" height="166" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1584320199848" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right/0.0.1920.1800@0.0.1920.1800" timestamp="1585689469918" />
     <state x="128" y="0" width="1024" height="701" key="SettingsEditor" timestamp="1583869953882">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

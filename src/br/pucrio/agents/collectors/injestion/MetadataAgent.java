@@ -24,9 +24,7 @@
  */
 package br.pucrio.agents.collectors.injestion;
 
-import br.pucrio.agents.TrainingAgent;
 import br.pucrio.agents.collectors.BaseCollectorAgent;
-import jade.core.behaviours.CyclicBehaviour;
 
 import java.util.Random;
 

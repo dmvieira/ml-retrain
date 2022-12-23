@@ -1,6 +1,7 @@
 package br.pucrio;
 
 import br.pucrio.agents.collectors.injestion.ClusterAgent;
+import br.pucrio.agents.collectors.injestion.CorrelationAgent;
 import br.pucrio.agents.collectors.injestion.MetadataAgent;
 import jade.core.*;
 import jade.core.Runtime;
@@ -13,18 +14,19 @@ import java.util.List;
 
 public class Collector {
 
-    private static List<Class<? extends Agent>> getDataAgents() {
+    private static List<Class<? extends Agent>> getInjestionAgents() {
         List<Class<? extends Agent>> classes = new ArrayList();
         classes.add(MetadataAgent.class);
+        classes.add(CorrelationAgent.class);
         classes.add(ClusterAgent.class);
         return classes;
     }
 
-    private static void loadAllAgents(Runtime rt, AgentContainer mainContainer) throws StaleProxyException {
+    public static void loadAllAgents(Runtime rt) throws StaleProxyException {
 
-        List<Class<? extends Agent>> classes = getDataAgents();
+        List<Class<? extends Agent>> classes = getInjestionAgents();
 
-        ProfileImpl pContainer = new ProfileImpl(null, 1200, null);
+        ProfileImpl pContainer = new ProfileImpl();
         pContainer.setParameter(Profile.CONTAINER_NAME, "Injestion");
         AgentContainer cont = rt.createAgentContainer(pContainer);
 
@@ -38,16 +40,6 @@ public class Collector {
 
     public static void main(String[] args) throws StaleProxyException {
         Runtime rt = Runtime.instance();
-        rt.setCloseVM(true);
-
-        Profile profile = new ProfileImpl(null, 1200, "Collector");
-        AgentContainer mainContainer = rt.createMainContainer(profile);
-
-        loadAllAgents(rt, mainContainer);
-        AgentController rma = mainContainer.createNewAgent(
-                "rma", "jade.tools.rma.rma", new Object[0]);
-        rma.start();
-
-
+        loadAllAgents(rt);
     }
 }

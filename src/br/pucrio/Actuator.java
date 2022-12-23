@@ -1,6 +1,6 @@
 package br.pucrio;
 
-import br.pucrio.agents.TrainingAgent;
+import br.pucrio.agents.RulerAgent;
 import jade.core.Agent;
 import jade.core.Profile;
 import jade.core.ProfileImpl;
@@ -14,12 +14,12 @@ import java.util.List;
 
 public class Actuator {
 
-    private static void loadAllAgents(Runtime rt, AgentContainer mainContainer) throws StaleProxyException {
+    public static void loadAllAgents(Runtime rt) throws StaleProxyException {
 
         List<Class<? extends Agent>> classes = new ArrayList<>();
-        classes.add(TrainingAgent.class);
-        ProfileImpl pContainer = new ProfileImpl(null, 1200, null);
-        pContainer.setParameter(Profile.CONTAINER_NAME, "Tranining");
+        classes.add(RulerAgent.class);
+        ProfileImpl pContainer = new ProfileImpl();
+        pContainer.setParameter(Profile.CONTAINER_NAME, "Ruler");
         AgentContainer cont = rt.createAgentContainer(pContainer);
 
         for (Class<? extends Agent> klass: classes) {
@@ -32,16 +32,7 @@ public class Actuator {
 
     public static void main(String[] args) throws StaleProxyException {
         Runtime rt = Runtime.instance();
-        rt.setCloseVM(true);
-
-        Profile profile = new ProfileImpl(null, 1200, "Actuator");
-        AgentContainer mainContainer = rt.createMainContainer(profile);
-
-        loadAllAgents(rt, mainContainer);
-        AgentController rma = mainContainer.createNewAgent(
-                "rma", "jade.tools.rma.rma", new Object[0]);
-        rma.start();
-
+        loadAllAgents(rt);
 
     }
 }

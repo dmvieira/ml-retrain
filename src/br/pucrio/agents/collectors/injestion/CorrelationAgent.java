@@ -24,12 +24,8 @@
  */
 package br.pucrio.agents.collectors.injestion;
 
-import br.pucrio.agents.TrainingAgent;
 import br.pucrio.agents.collectors.BaseCollectorAgent;
-import jade.core.AID;
-import jade.core.behaviours.CyclicBehaviour;
 
-import java.util.Iterator;
 import java.util.Random;
 
 public class CorrelationAgent extends BaseCollectorAgent {

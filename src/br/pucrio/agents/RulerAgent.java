@@ -25,19 +25,37 @@
 package br.pucrio.agents;
 
 import jade.core.behaviours.CyclicBehaviour;
-import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.TickerBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 
 import java.util.Random;
 
 
-public class TrainingAgent extends BaseAgent {
+public class RulerAgent extends BaseAgent {
+
+//    teardown to ignore services
 
     protected void setup() {
         System.out.println("Hello World! My name is "+getLocalName());
-        addBehaviour(new OneShotBehaviour() {
+        addBehaviour(new TickerBehaviour(this, 1000) {
             @Override
-            public void action() {
+            public void onTick() {
+                ServiceDescription service = new ServiceDescription();
+                service.setType("collector");
+                DFAgentDescription dfd = new DFAgentDescription();
+                dfd.addServices(service);
+                try {
+                    DFAgentDescription[] result = DFService.search(getAgent(), dfd);
+                    for (DFAgentDescription agentDescription: result) {
+                        sendMessage("my path to monitor", agentDescription.getName());
+                    }
+                } catch (FIPAException e) {
+                    e.printStackTrace();
+                }
 
             }
         });
